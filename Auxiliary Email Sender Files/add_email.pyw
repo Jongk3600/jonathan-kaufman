@@ -1,5 +1,6 @@
 from tkinter import *
 
+# Creates the window for main part of program
 add_email_window = Tk()
 add_email_window.title('Add Email')
 
@@ -37,6 +38,7 @@ def add_emails(email_1,email_2,email_3,email_4,email_5):
 
     subbmitted_window.mainloop()
 
+# This starts main part of program
 window_head = Label(add_email_window,text = 'Please enter the email(s) you want to add')
 
 email_1_label = Label(add_email_window,text = 'E-mail 1:')

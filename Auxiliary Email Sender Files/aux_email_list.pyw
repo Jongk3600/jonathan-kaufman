@@ -4,12 +4,17 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 
-
+# Creates the window
 window= Tk()
 window.title('Login')
 window.geometry('200x120')
 
 def send_email(subject,body,password):
+    """
+    This takes in the subject body and password
+    and sends the email to the emails in the
+    emails.txt file.
+    """
     file = open('login_email.txt','r')
     file_read = file.readlines()
     open_emails = open('emails.txt')
@@ -36,13 +41,29 @@ def send_email(subject,body,password):
     file.close()
 
 def add_emails_to_list():
+    """
+    This runs the add_email script which
+    allows user to add emails to the to
+    field. 
+    """
     import add_email
 
 def run_change_email():
+    """
+    This runs change_from_email to allow
+    user to change the email that the email
+    is sent from.
+    """
     import change_from_email
 
 
 def compose_email():
+    """
+    This is the function that asks user to
+    enter in subject and body and has a button
+    to initiate add_emails_to_list function and
+    button to initiate send_email function.
+    """
     login_info = open('login_email.txt','r')
     readfile = login_info.readlines()
     server_password= password.get()
@@ -89,7 +110,7 @@ def compose_email():
     compose_window.mainloop()
                                                                                               
     
-
+# This starts the main part of program
 title = Label(window,text = 'Enter password to send e-mail')
 space= Label(window,text = '')
 password_label= Label(window,text = 'Password: ')

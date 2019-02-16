@@ -1,10 +1,16 @@
 from tkinter import *
 
+# Creates window
 change_email_window = Tk()
 change_email_window.title('Change Login Email')
 
 def edit_login_email(email):
-    if '@' not in email:
+    """
+    This function checks value for @
+    and if it contains it adds value
+    to the login_email.txt file.
+    """
+    if '@' not in email: # This if statement checks to see if value contains @
         invalid = Tk()
         invalid.title('Invalid Email')
         invalid_email_label = Label(invalid, text = 'Not a valid Email!')
@@ -23,6 +29,7 @@ def edit_login_email(email):
         close_window.grid(row=2, column=1)
         info_recieved_window.mainloop()
 
+# Starts the main part of program
 main_label = Label(change_email_window, text = 'Please enter in new login email!')
 email_label = Label(change_email_window, text = 'Email:')
 email_entry = Entry(change_email_window, width = 25)
